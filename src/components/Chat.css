@@ -1,0 +1,129 @@
+@scope (.markdown) {
+  /* 代码块：保留换行，并为行内代码与块级代码提供统一底色。 */
+  pre {
+    margin: 0.5rem 0;
+    white-space: break-spaces;
+  }
+
+  code {
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 0.9em;
+  }
+
+  pre,
+  code {
+    background-color: #f2f2f2;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    pre,
+    code {
+      background-color: #333;
+    }
+  }
+
+  pre:has(code) {
+    padding: 1rem 0.5rem;
+  }
+
+  pre > code {
+    padding: 0;
+  }
+
+  /* 标题：恢复 Markdown 标题的层级差异，同时控制消息气泡内的纵向间距。 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin: 0.83rem 0;
+  }
+
+  h3 {
+    font-size: 1.25em;
+    margin: 0.67rem 0;
+  }
+
+  h4 {
+    font-size: 1em;
+    margin: 0.5rem 0;
+  }
+
+  h5 {
+    font-size: 0.875em;
+    margin: 0.33rem 0;
+  }
+
+  h6 {
+    font-size: 0.75em;
+    margin: 0.25rem 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6:first-child {
+    margin-top: 0;
+  }
+
+  /* 无序列表：恢复圆点标记，并为标记预留左侧空间。 */
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+  }
+
+  /* 有序列表：恢复数字标记，并与无序列表保持相同缩进。 */
+  ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+  }
+
+  /* 列表项：增加相邻条目之间的间距，避免内容过于拥挤。 */
+  li {
+    margin: 0.25rem 0;
+  }
+
+  p:not(:first-child) {
+    margin-top: 0.75rem;
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  ul > li {
+    margin-left: 1rem;
+  }
+
+  /* 表格：为单元格添加边框和内边距，并适配系统深色模式。 */
+  table,
+  th,
+  td {
+    border: 1px solid lightgray;
+    padding: 0.25rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    table,
+    th,
+    td {
+      border: 1px solid #f2f2f2;
+    }
+  }
+}
